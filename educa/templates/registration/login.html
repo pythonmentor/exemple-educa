@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block content %}
+  <h1>Connexion</h1>
+  <div class="module">
+    {% if form.errors %}
+      <p>Votre nom d'utilisateur et mot de passe ne correspondent pasYour username and password didn't match. S'il vous plaît, essayez à nouveau.</p>
+    {% else %}
+      <p>S'il vous plaît, utilisez le formulaire suivant pour vous connecter:</p>
+    {% endif %}
+    <div class="login-form">
+      <form action="{% url 'login' %}" method="post">
+        {{ form|crispy }}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        <p><input type="submit" value="Me connecter"></p>
+      </form>
+    </div>
+  </div>
+{% endblock %}

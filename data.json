@@ -1,0 +1,63 @@
+[
+{
+  "model": "courses.subject",
+  "fields": {
+    "title": "Bases de données",
+    "slug": "bases-de-donnees"
+  }
+},
+{
+  "model": "courses.subject",
+  "fields": {
+    "title": "Programmation",
+    "slug": "programmation"
+  }
+},
+{
+  "model": "courses.subject",
+  "fields": {
+    "title": "DevOps",
+    "slug": "devops"
+  }
+},
+{
+  "model": "courses.subject",
+  "fields": {
+    "title": "Conception graphique",
+    "slug": "conception-graphique"
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$720000$g3WVElFaHgenHcCynrixE0$wDMDuDjlppaDTppubh7627dKm0Nw45/Ds3Exb7AU7u0=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Guido",
+    "last_name": "van Rossum",
+    "email": "admin@exemple.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-12-12T13:46:14.499Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "courses.course",
+  "fields": {
+    "owner": [
+      "admin"
+    ],
+    "subject": [
+      "programmation"
+    ],
+    "title": "Mon premier cours Python",
+    "slug": "mon-premier-cours-python",
+    "overview": "Mon tout premier cours au sujet du langage de programmation Python.",
+    "created": "2023-12-12T11:36:04.167Z",
+    "students": []
+  }
+}
+]

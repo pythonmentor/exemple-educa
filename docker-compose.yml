@@ -1,0 +1,54 @@
+version: '3'
+
+volumes:
+  mariadb_educa_volume_23306:
+  postgres_educa_volume_25432:
+  mysql_educa_volume_33306:
+
+services:
+  mariadb:
+    image: mariadb:10.6.16
+    container_name: educa_local_mariadb_23306
+    restart: always
+    ports:
+      - 23306:3306
+    volumes:
+      - mariadb_educa_volume_23306:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=educa 
+      - MYSQL_USER=educa 
+      - MYSQL_PASSWORD=educa 
+      - MYSQL_DATABASE=educa 
+
+  mysql:
+    image: mysql:latest
+    container_name: educa_local_mysql_33306
+    restart: always
+    ports:
+      - 33306:3306
+    volumes:
+      - mysql_educa_volume_33306:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=educa 
+      - MYSQL_USER=educa 
+      - MYSQL_PASSWORD=educa 
+      - MYSQL_DATABASE=educa 
+
+  postgres:
+    image: postgres:latest
+    container_name: educa_local_postgres_25432
+    restart: always
+    ports:
+      - 25432:3306
+    volumes:
+      - postgres_educa_volume_25432:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=educa 
+      - POSTGRES_PASSWORD=educa 
+      - POSTGRES_DB=educa 
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    container_name: educo_local_redis_6379
